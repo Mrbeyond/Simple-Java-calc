@@ -297,8 +297,8 @@ public class Calc {
     
     
 //     public static String bracketEval(){
-//         String br = "4-9+(-5)";
-//         // String br = "4+3((2*2^2)(2+4)^2)+9^2";
+//         // String br = "4-9+(-5)(-5)";
+//         String br = "4+3((2*2^2)(2+4)^2)+9^(-2)";
 //         // String br = "4+3+sin(90)sin(30)sin(60)cos(60)+2+log(100)";
 //         double ANS;
 //         while(br.lastIndexOf("(") > -1){
@@ -536,14 +536,25 @@ public class Calc {
 //                         y = mm.start();
 //                     }
 //                 }
-              
-//                 mm = rigex("\\d+\\.?\\d*",right);
-//                 if(mm.find()){
+                
+                
+//                 if(s[i].equals('^')){
+//                     mm = rigex("\\-?\\d+\\.?\\d*",right);
+//                     if(mm.find()){
+//                         r = mm.group();
+//                         z = p+r.length();
+//                     }
+//                 }else{
+//                     mm = rigex("\\d+\\.?\\d*",right);
+//                     if(mm.find()){
 //                     r = mm.group();
 //                     z = p+r.length();
+//                     }
 //                 }
-//                 System.out.println(l + "  ----  "+r);
+              
+                
 //                 if(r.equals("") || l.equals("")) continue;
+//                 System.out.println(l + "  ----  "+r);
 //                 if(s[i].equals('+')){
                     
 //                     ans = Double.valueOf(l)+ Double.valueOf(r);
@@ -588,9 +599,9 @@ public class Calc {
     
 //     public static void main(String args[]) {
       
-//     //   mathEval("9-4+2^3");
+//       mathEval("2^3");
 //     //   System.out.println(mathEval("4"));
-//     bracketEval();
+//     // bracketEval();
           
       
 //     }
