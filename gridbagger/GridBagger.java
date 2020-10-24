@@ -2,6 +2,12 @@ package gridbagger;
 import java.awt.*;
 public class GridBagger {
   public static GridBagConstraints plan;
+  public static GridBagConstraints adder;
+
+  public static GridBagConstraints emptyLay(){
+    adder = new GridBagConstraints();
+    return adder;
+  }
 
   /** Simple x and y */
   public static GridBagConstraints pos(int x, int y){
