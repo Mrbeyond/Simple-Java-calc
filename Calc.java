@@ -236,7 +236,16 @@ public class Calc {
               ansBox.setText("Syntax Error");
               return;
             }
-            answer = Eval.bracketEval(currentValue);
+            answer = Eval.factorial(currentValue);
+            if(answer.equals("Syntax Error")){
+              ansBox.setText("Syntax Error");
+              return;
+            }
+            if(answer.equals("Math Eroor")){
+              ansBox.setText("Math Error");
+              return;
+            }
+            answer = Eval.bracketEval(answer);
             if(answer.equals("Math Error")){
               ansBox.setText(answer);
             }else{

@@ -61,20 +61,24 @@ public class Eval {
             String part = mm.group();
             int exact = Integer.valueOf(part.substring(0,part.length()-1));            
             if(exact == 0){
-              fact = "0.0";
+              fact = "1.0";
             }else{
               fact = String.valueOf(Double.valueOf(factorialize(exact)));
             }
             if(lSide.length() == part.length()){
               str = fact+rSide;
+              System.out.println(part+" part is"+ str);
             }else{
               if(lSide.charAt((lSide.length()-part.length()-1)) == ')'){
-                lSide = lSide.replace("\\d+!$", fact);
-                str = lSide+"*"+rSide;
-              }else{
-                lSide = lSide.replace("\\d+!$", fact);
+                lSide = lSide.replace(part, "*"+fact);
                 str = lSide+rSide;
-                // System.out.println("top is"+ lSide +" ryt "+rSide+ " loc "+locate);
+                System.out.println("mid is"+ str);
+              }else{
+                System.out.println("bot is "+ lSide +" ryt "+rSide+ " loc "+fact);
+                lSide = lSide.replace(part, fact);
+                System.out.println("side is"+ lSide );
+                str = lSide+rSide;
+                System.out.println("bot is"+ str);
               }
             }
           }else{
@@ -456,7 +460,7 @@ public class Eval {
     // mathEval("2*2");
   //   System.out.println(mathEval("4"));
   // bracketEval("asin(5)");
-  factorial("5+5!");
+  factorial("5+(3!)");
         
     
   }
